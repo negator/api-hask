@@ -17,14 +17,30 @@ library
   hs-source-dirs:      src
   exposed-modules:     Lib
   build-depends:       base >= 4.7 && < 5
+                      , safe
+                      , wreq
+                      , array
+                      , text                      
+                      , MissingH
+                      
   default-language:    Haskell2010
 
 executable api-hask-exe
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       base
-                     , api-hask
+  build-depends:       base  >= 4.7 && < 5
+                     , safe
+                     , api-hask                     
+                     , wreq                                        
+                     , aeson
+                     , lens
+                     -- , lens-aeson
+                     -- , time
+                     --, async
+                     , scalpel
+                     , tagsoup                                          
+                     , bytestring
   default-language:    Haskell2010
 
 test-suite api-hask-test
@@ -33,7 +49,7 @@ test-suite api-hask-test
   main-is:             Spec.hs
   build-depends:       base
                      , api-hask
-  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N  -fno-warn-tabs
   default-language:    Haskell2010
 
 source-repository head
