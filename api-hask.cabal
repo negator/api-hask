@@ -34,11 +34,13 @@ executable api-hask-exe
                      , api-hask                     
                      , wreq                                        
                      , aeson
+                     , aeson-pretty
                      , lens
+                     , text
+                     , containers
                      -- , lens-aeson
                      -- , time
                      --, async
-                     , scalpel
                      , tagsoup                                          
                      , bytestring
   default-language:    Haskell2010
